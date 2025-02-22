@@ -29,7 +29,7 @@ import java.util.Calendar;
 import cz.msebera.android.httpclient.Header;
 
 public class DonorActivity extends AppCompatActivity {
-    String name, dob, address, mobile, email, username, password;
+    String name, dob, address, mobile, email, username, password,registrationNumber="null",details="null";
     Button registerButton;
      String stringDob;
      String userType="Donor";
@@ -95,14 +95,16 @@ public class DonorActivity extends AppCompatActivity {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
-        params.put("name",name);
-        params.put("emailid",email);
-        params.put("mobileno",mobile);
-        params.put("password",password);
-        params.put("username",username);
-        params.put("dob",dob);
-        params.put("address",address);
-        params.put("userType",userType);
+        params.put("name", name);
+        params.put("mobileno", mobile);
+        params.put("emailid", email); // Added emailid
+        params.put("dob", dob);       // Added dob
+        params.put("password", password);
+        params.put("username", username);
+        params.put("address", address);
+        params.put("userType", userType);
+        params.put("registerno", registrationNumber);
+        params.put("details", details);
         client.post(urls.userregister,params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
