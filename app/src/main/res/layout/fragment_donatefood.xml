@@ -1,14 +1,124 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DONOR.Donatefood">
+    android:padding="16dp"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+>
 
-</FrameLayout>
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Donation"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="100dp"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help those in need by donating food"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/ivFoodImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_camera_alt_24"
+            />
+
+        <!-- Button to Upload Image -->
+        <Button
+            android:id="@+id/btnUploadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Image"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/green" />
+
+        <!-- Details Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Details Input -->
+        <EditText
+            android:id="@+id/etFoodDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter food details"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            android:padding="10dp"/>
+
+        <!-- Address Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Address Input -->
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter address"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            android:padding="10dp"/>
+
+        <!-- Quantity Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Quantity Input -->
+        <EditText
+            android:id="@+id/etQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter quantity (e.g., 5 plates)"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            android:padding="10dp"
+            android:inputType="number"/>
+
+        <!-- Donate Food Button -->
+        <Button
+            android:id="@+id/btnDonateFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="Donate Food"
+            android:backgroundTint="@color/green"
+            android:textColor="@color/white"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
