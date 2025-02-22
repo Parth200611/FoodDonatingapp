@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/AAllDonate"
+        android:title="All Donation"
+        android:icon="@drawable/baseline_fastfood_24"
+        /> <item
+    android:id="@+id/ARequestfood"
+    android:title="Request Food"
+    android:icon="@drawable/baseline_person_add_alt_1_24"
+    /><item
+    android:id="@+id/AResponce"
+    android:title="Responce"
+    android:icon="@drawable/baseline_get_app_24"
+    /> <item
+    android:id="@+id/AHiistory"
+    android:title="History"
+    android:icon="@drawable/baseline_history_24"
+    /> <item
+    android:id="@+id/AProfil"
+    android:title="Profil"
+    android:icon="@drawable/baseline_person_24"
+    />
+
+</menu>
