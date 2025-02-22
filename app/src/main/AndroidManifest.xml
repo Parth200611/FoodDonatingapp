@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShareBite"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".DonorActivity"
@@ -21,9 +22,7 @@
         <activity
             android:name=".ChooseRole"
             android:exported="false" />
-        <activity
-            android:name=".RegisterNow"
-            android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
