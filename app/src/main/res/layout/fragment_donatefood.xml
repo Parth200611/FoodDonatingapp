@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Upload Image"
             android:layout_marginTop="12dp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/green" />
 
         <!-- Details Title -->
