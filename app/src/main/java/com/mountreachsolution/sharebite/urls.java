@@ -5,4 +5,5 @@ public class urls {
     public static String userregister=address+"registerdata.php";
     public static String certificateimage=address+"certificateimage.php";
     public static String login=address+"login.php";
+    public static String Profildat=address+"profildat.php";public static String profilimage=address+"profilimage.php";
 }
