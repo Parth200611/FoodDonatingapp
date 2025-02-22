@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F7F7"
-    android:fillViewport="true">
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="4dp"
-                    android:text="Welcome to Rescue Wings !!"
+                    android:text="Welcome to ShareBite !!"
                     android:textColor="@color/green"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -169,7 +169,7 @@
                         android:textColor="#333333" />
 
                     <TextView
-                        android:id="@+id/tvEmail"
+                        android:id="@+id/tvmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"

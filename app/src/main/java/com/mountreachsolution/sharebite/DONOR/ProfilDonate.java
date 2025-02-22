@@ -78,7 +78,7 @@ public class ProfilDonate extends Fragment {
         tvWelcome = view.findViewById(R.id.tvWelcome);
         tvName = view.findViewById(R.id.tvname);
         tvMobileNo = view.findViewById(R.id.tvMobileno);
-        tvEmail = view.findViewById(R.id.tvEmail);
+        tvEmail = view.findViewById(R.id.tvmail);
         tvDob = view.findViewById(R.id.tvDob);
         tvUserType = view.findViewById(R.id.tvUserType);
         btnLogout = view.findViewById(R.id.btnlogout);
