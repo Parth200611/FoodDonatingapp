@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".RequestDeatils"
+            android:name=".ACCEPTER.RequestDeatils"
             android:exported="false" />
         <activity
             android:name=".ACCEPTER.PostDetails"

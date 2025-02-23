@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mountreachsolution.sharebite.ACCEPTER.POJO.POJOGetRequest;
 import com.mountreachsolution.sharebite.R;
-import com.mountreachsolution.sharebite.RequestDeatils;
+import com.mountreachsolution.sharebite.ACCEPTER.RequestDeatils;
 
 import java.util.List;
 
@@ -46,6 +46,7 @@ public class AdpterFRequest extends RecyclerView.Adapter<AdpterFRequest.ViewHold
                 Intent i = new Intent(activity, RequestDeatils.class);
                 i.putExtra("DUsername",data.getDusername());
                 i.putExtra("Ausername",data.getAusername());
+                i.putExtra("id",data.getId());
                 activity.startActivity(i);
             }
         });
