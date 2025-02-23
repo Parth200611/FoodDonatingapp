@@ -1,7 +1,5 @@
-package com.mountreachsolution.sharebite.DONOR;
+package com.mountreachsolution.sharebite.ACCEPTER;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.mountreachsolution.sharebite.DONOR.RequsetDetailsD;
 import com.mountreachsolution.sharebite.R;
 import com.mountreachsolution.sharebite.urls;
 
@@ -27,17 +26,17 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RequsetDetailsD extends AppCompatActivity {
+public class RequsetDetailsA extends AppCompatActivity {
     CircleImageView profileImage;
-     TextView tvUsername, tvWelcome, tvName, tvRegisterNo, tvAddress;
-     Button btnAccept, btnReject;
-     String Uuserename,Ausername,id;
+    TextView tvUsername, tvWelcome, tvName, tvEmail, tvAddress;
+    Button btnAccept, btnReject;
+    String Uuserename,Ausername,id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_requset_details_d);
+        setContentView(R.layout.activity_requset_details);
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.brown));
         getWindow().setNavigationBarColor(ContextCompat.getColor(this,R.color.white));
         Uuserename=getIntent().getStringExtra("Dusername");
@@ -47,12 +46,10 @@ public class RequsetDetailsD extends AppCompatActivity {
         tvUsername = findViewById(R.id.tvUsername);
         tvWelcome = findViewById(R.id.tvWelcome);
         tvName = findViewById(R.id.tvname);
-        tvRegisterNo = findViewById(R.id.tvRegisterno);
+        tvEmail = findViewById(R.id.tvEmail);
         tvAddress = findViewById(R.id.tvAddress);
         tvUsername.setText(Ausername);
         getdata();
-
-
 
     }
 
@@ -60,7 +57,7 @@ public class RequsetDetailsD extends AppCompatActivity {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
-        params.put("username",Ausername);
+        params.put("username",Uuserename);
         client.post(urls.Profildat,params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -78,9 +75,9 @@ public class RequsetDetailsD extends AppCompatActivity {
                         String registerno=jsonObject.getString("registerno");
                         String address=jsonObject.getString("address");
                         tvName.setText(name);
-                        tvRegisterNo.setText(registerno);
+                        tvEmail.setText(email);
                         tvAddress.setText(address);
-                        Glide.with(RequsetDetailsD.this)
+                        Glide.with(RequsetDetailsA.this)
                                 .load(urls.address + "images/"+image)
                                 .skipMemoryCache(true)
                                 .error(R.drawable.baseline_person_24)// Resize the image to 800x800 pixels

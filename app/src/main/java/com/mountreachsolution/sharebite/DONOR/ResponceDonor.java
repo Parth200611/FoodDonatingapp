@@ -37,6 +37,7 @@ public class ResponceDonor extends Fragment {
      TextView tvNoRequest;
      List<POJOAccepetRequest>pojoAccepetRequests;
      String uswername;
+
      AdpterConfirm adpterConfirm;
 
 
