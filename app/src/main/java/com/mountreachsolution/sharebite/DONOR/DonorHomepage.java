@@ -48,6 +48,7 @@ BottomNavigationView bottomNavigationView;
     Request request = new Request();
     HistoryDonate  historyDonate = new HistoryDonate();
     ProfilDonate profilDonate = new ProfilDonate();
+    ResponceDonor responceDonor = new ResponceDonor();
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -57,6 +58,8 @@ BottomNavigationView bottomNavigationView;
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,request).commit();
         } else if(item.getItemId()==R.id.DHiistory){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,historyDonate).commit();
+        } else if(item.getItemId()==R.id.DResponce){
+            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,responceDonor).commit();
         }else if(item.getItemId()==R.id.DProfil){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,profilDonate).commit();
         }

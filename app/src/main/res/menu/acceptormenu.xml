@@ -10,7 +10,7 @@
     android:icon="@drawable/baseline_person_add_alt_1_24"
     /><item
     android:id="@+id/AResponce"
-    android:title="Responce"
+    android:title="Accepted Request"
     android:icon="@drawable/baseline_get_app_24"
     /> <item
     android:id="@+id/AHiistory"

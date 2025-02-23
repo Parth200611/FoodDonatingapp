@@ -19,4 +19,5 @@ public class urls {
     public static String getRequest=address+"getRequest.php";
     public static String AcceptRequest=address+"AcceptRequest.php";
     public static String removerequest=address+"removerequest.php";
+    public static String confirRequest=address+"confirRequest.php";
 }
