@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ACCEPTER.AllDonate">
 
-    <!-- TODO: Update blank fragment layout -->
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="All Post"
+      android:textColor="@color/green"
+      android:textSize="28dp"
+      android:textStyle="bold"
+      android:layout_marginTop="100dp"
+      android:layout_marginStart="12dp"
+      />
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search here Address"
+        android:iconifiedByDefault="false"
+        android:layout_margin="12dp"
+        android:background="@drawable/edittext"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvlist"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="No Post"
+        android:textColor="@color/green"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="12dp"
+        android:gravity="center"
+        android:id="@+id/tvNoPost"
+        android:visibility="gone"
+        />
 
-</FrameLayout>
+
+
+</LinearLayout>
