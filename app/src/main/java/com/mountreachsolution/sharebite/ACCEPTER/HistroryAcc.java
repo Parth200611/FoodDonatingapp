@@ -1,66 +1,101 @@
 package com.mountreachsolution.sharebite.ACCEPTER;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import com.mountreachsolution.sharebite.ACCEPTER.Adpter.AdpterHis;
+import com.mountreachsolution.sharebite.DONOR.Adpter.AdpterHistory;
+import com.mountreachsolution.sharebite.DONOR.POJO.POJOHistory;
 import com.mountreachsolution.sharebite.R;
+import com.mountreachsolution.sharebite.urls;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HistroryAcc#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
+
+
 public class HistroryAcc extends Fragment {
+    RecyclerView rvList;
+    TextView tvNoRequest;
+    String username;
+    List<POJOHistory> pojoHistories;
+    AdpterHis adpterHistroey;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public HistroryAcc() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HistroryAcc.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HistroryAcc newInstance(String param1, String param2) {
-        HistroryAcc fragment = new HistroryAcc();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_histrory_acc, container, false);
+        View view= inflater.inflate(R.layout.fragment_histrory_acc, container, false);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        username = sharedPreferences.getString("username", "Guest");
+        rvList = view.findViewById(R.id.rvLsit);
+        tvNoRequest = view.findViewById(R.id.tvNoRequest);
+        rvList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        pojoHistories=new ArrayList<>();
+
+        getDta(username);
+        return view;
+    }
+    private void getDta(String username) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("username",username);
+        client.post(urls.getHistroryAa,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    JSONArray jsonArray = response.getJSONArray("getPostData");
+                    if (jsonArray.length()==0){
+                        rvList.setVisibility(View.GONE);
+                        tvNoRequest.setVisibility(View.VISIBLE);
+                    }
+                    for (int i=0;i<jsonArray.length();i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String id=jsonObject.getString("id");
+                        String username=jsonObject.getString("username");
+                        String name=jsonObject.getString("name");
+                        String address=jsonObject.getString("address");
+                        String quantity=jsonObject.getString("quantity");
+                        String details=jsonObject.getString("detail");
+                        String image=jsonObject.getString("image");
+                        String mobile=jsonObject.getString("mobilenno");
+                        String acceptero=jsonObject.getString("acceptero");
+                        String status=jsonObject.getString("status");
+                        pojoHistories.add(new POJOHistory(id,username,name,mobile,address,details,image,acceptero,status,quantity));
+                    }
+                    adpterHistroey=new AdpterHis(pojoHistories,getActivity());
+                    rvList.setAdapter(adpterHistroey);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        });
     }
 }

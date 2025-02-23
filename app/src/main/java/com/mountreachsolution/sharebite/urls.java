@@ -12,4 +12,6 @@ public class urls {
     public static String getPost=address+"getPost.php";
     public static String acceptdata=address+"acceptdata.php";
     public static String removepost=address+"removepost.php";
+    public static String getHistorory=address+"getUsernamedata.php";
+    public static String getHistroryAa=address+"getHistrory.php";
 }
