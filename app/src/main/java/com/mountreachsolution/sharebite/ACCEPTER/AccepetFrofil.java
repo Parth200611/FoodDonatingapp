@@ -88,6 +88,13 @@ public class AccepetFrofil extends Fragment {
                 SelectUserProfileimage();
             }
         });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logoutUser();
+
+            }
+        });
 
         return view;
     }

@@ -1,10 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ACCEPTER.PostDetails">
+    android:orientation="vertical"
+    android:background="@color/white"
+   >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        android:text="Post Details"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="12dp"
+        android:id="@+id/ivImage"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            /><TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:layout_marginStart="3dp"
+        android:id="@+id/tvName"
+        />
+    </LinearLayout> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile No:"
+        /><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+    android:layout_marginStart="3dp"
+    android:id="@+id/tvMobileno"
+    />
+</LinearLayout><LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        /><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+    android:layout_marginStart="3dp"
+    android:id="@+id/tvUsername"
+    />
+</LinearLayout> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location:"
+        /><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+    android:layout_marginStart="3dp"
+    android:id="@+id/tvLocation"
+    />
+</LinearLayout><LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity:"
+        /><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+    android:layout_marginStart="3dp"
+    android:id="@+id/tvQuantity"
+    />
+</LinearLayout> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details:"
+        /><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+    android:layout_marginStart="3dp"
+    android:id="@+id/tvDetails"
+    />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green"
+            android:id="@+id/btnAccept"
+            android:layout_weight="1"
+            /> <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="Reject"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:backgroundTint="#87DA8A"
+        android:id="@+id/btnReject"
+        />
+    </LinearLayout>
+
+
+</LinearLayout>

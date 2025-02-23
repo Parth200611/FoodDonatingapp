@@ -10,4 +10,6 @@ public class urls {
     public static String PostDonate=address+"PostDonate.php";
     public static String PostDonateImg=address+"POstDoimage.php";
     public static String getPost=address+"getPost.php";
+    public static String acceptdata=address+"acceptdata.php";
+    public static String removepost=address+"removepost.php";
 }

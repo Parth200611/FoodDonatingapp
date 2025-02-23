@@ -54,6 +54,7 @@ public class AdpterPost extends RecyclerView.Adapter<AdpterPost.ViewHolder> {
             public void onClick(View view) {
                 Intent i = new Intent(activity, PostDetails.class);
                 i.putExtra("username",obj.getUsername());
+                i.putExtra("id",obj.getId());
                 i.putExtra("address",obj.getAddress());
                 i.putExtra("detail",obj.getDetail());
                 i.putExtra("quantity",obj.getQuantity());
