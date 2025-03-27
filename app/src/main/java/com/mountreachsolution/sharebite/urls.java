@@ -1,7 +1,7 @@
 package com.mountreachsolution.sharebite;
 
 public class urls {
-    public static String address="http://192.168.1.3:80/sharebite/";
+    public static String address="http://192.168.1.4:80/sharebite/";
     public static String userregister=address+"registerdata.php";
     public static String certificateimage=address+"certificateimage.php";
     public static String login=address+"login.php";
@@ -21,4 +21,5 @@ public class urls {
     public static String removerequest=address+"removerequest.php";
     public static String confirRequest=address+"confirRequest.php";
     public static String confirrequestA=address+"confirrequestA.php";
+    public static String password=address+"password.php";
 }
